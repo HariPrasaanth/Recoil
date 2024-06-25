@@ -7,7 +7,7 @@ export const todoIdsAtom = atom({
 
 export const todoAtomFamily = atomFamily({
     key: "",
-    default:[]
+    default:{}
 })
 
 export const todoListState = atom({
