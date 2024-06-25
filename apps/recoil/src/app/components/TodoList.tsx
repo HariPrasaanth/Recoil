@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TodoItemCreator from "./TodoItemCreator";
 import { useRecoilValue } from "recoil";
-import { todoListState } from "../state/recoilstate";
+import { todoIdsAtom, todoListState } from "../state/recoilstate";
 import TodoItem from "./TodoItem";
 
 const TodoMainContainer = styled.div`
@@ -10,13 +10,15 @@ const TodoMainContainer = styled.div`
     row-gap: 1rem;
 `
 const TodoList = () => {
-    const todoList = useRecoilValue(todoListState)
+    // const todoList = useRecoilValue(todoListState)
+    const todosIds = useRecoilValue(todoIdsAtom)
+    console.log("Todos IDS", todosIds)
     return (
         <>
             <TodoMainContainer>
                 <TodoItemCreator />
-                {todoList?.map((todoItem) => (
-                    <TodoItem item={todoItem} key={todoItem.id} />
+                {todosIds?.map((todo: number)=>(
+                    <TodoItem id={todo} key={todo}/>
                 ))}
             </TodoMainContainer>
         </>
