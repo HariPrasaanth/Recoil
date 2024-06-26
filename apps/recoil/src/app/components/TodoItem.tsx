@@ -57,8 +57,8 @@ const TodoItem = ({ id }: { id: number }) => {
 
   return (
     <>
-      {todoList?.map((a, index) =>
-        <TodoMainContainer>
+      {todoList?.map((a, index: number) =>
+        <TodoMainContainer key={index}>
           <LabelCheckBoxContainer>
             <Checkbox checked={a?.isComplete} onChange={toggleItemCompletion} />
             <TodoLabel>{a?.text}</TodoLabel>

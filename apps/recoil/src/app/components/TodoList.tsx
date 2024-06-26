@@ -10,9 +10,7 @@ const TodoMainContainer = styled.div`
     row-gap: 1rem;
 `
 const TodoList = () => {
-    // const todoList = useRecoilValue(todoListState)
     const todosIds = useRecoilValue(todoIdsAtom)
-    console.log("Todos IDS", todosIds)
     return (
         <>
             <TodoMainContainer>
